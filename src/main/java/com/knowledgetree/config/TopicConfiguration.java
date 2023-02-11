@@ -1,5 +1,7 @@
 package com.knowledgetree.config;
 
+import static com.knowledgetree.KafkaConstant.KAFKA_TOPIC;
+
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +12,6 @@ public class TopicConfiguration {
 
   @Bean
   public NewTopic kafkaTopic() {
-    return TopicBuilder.name("kafkaTopic").build();
+    return TopicBuilder.name(KAFKA_TOPIC).build();
   }
 }
