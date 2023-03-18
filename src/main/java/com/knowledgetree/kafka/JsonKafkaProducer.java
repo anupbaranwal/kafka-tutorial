@@ -1,6 +1,6 @@
 package com.knowledgetree.kafka;
 
-import static com.knowledgetree.KafkaConstant.KAFKA_TOPIC;
+import static com.knowledgetree.KafkaConstant.KAFKA_JSON_TOPIC;
 
 import com.knowledgetree.model.User;
 import org.slf4j.Logger;
@@ -25,7 +25,7 @@ public class JsonKafkaProducer {
   public void sendMessage(User user) {
     Message<User> message = MessageBuilder
         .withPayload(user)
-        .setHeader(KafkaHeaders.TOPIC, KAFKA_TOPIC)
+        .setHeader(KafkaHeaders.TOPIC, KAFKA_JSON_TOPIC)
         .build();
     kafkaTemplate.send(message);
     log.info("user data sent: {}", user);

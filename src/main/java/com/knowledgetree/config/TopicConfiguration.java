@@ -1,5 +1,6 @@
 package com.knowledgetree.config;
 
+import static com.knowledgetree.KafkaConstant.KAFKA_JSON_TOPIC;
 import static com.knowledgetree.KafkaConstant.KAFKA_TOPIC;
 
 import org.apache.kafka.clients.admin.NewTopic;
@@ -13,5 +14,10 @@ public class TopicConfiguration {
   @Bean
   public NewTopic kafkaTopic() {
     return TopicBuilder.name(KAFKA_TOPIC).build();
+  }
+
+  @Bean
+  public NewTopic kafkaJsonTopic() {
+    return TopicBuilder.name(KAFKA_JSON_TOPIC).build();
   }
 }
